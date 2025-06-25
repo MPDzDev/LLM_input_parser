@@ -14,11 +14,10 @@ async function listFiles(dir, extensions, result = []) {
   return result;
 }
 
-async function generateSummary(productDir, customizerDir, extensions, output) {
-  const files = await listFiles(customizerDir, extensions);
+async function generateSummaryFromFiles(rootDir, files, output) {
   let summary = '';
-  for (const file of files) {
-    const relPath = path.relative(customizerDir, file);
+  for (const relPath of files) {
+    const file = path.join(rootDir, relPath);
     const content = await fs.readFile(file, 'utf8');
     summary += `## File: ${relPath}\n`;
     summary += '```\n';
@@ -30,4 +29,15 @@ async function generateSummary(productDir, customizerDir, extensions, output) {
   return summary;
 }
 
-module.exports = { generateSummary };
+async function generateSummary(productDir, customizerDir, extensions, output, selectedFiles = []) {
+  let files;
+  if (selectedFiles.length > 0) {
+    files = selectedFiles;
+  } else {
+    const all = await listFiles(customizerDir, extensions);
+    files = all.map(f => path.relative(customizerDir, f));
+  }
+  return generateSummaryFromFiles(customizerDir, files, output);
+}
+
+module.exports = { generateSummary, listFiles };
