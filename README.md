@@ -147,3 +147,7 @@ System: You are a senior software engineer.
 User: Based on the selected files below from the Customizer, generate equivalent or updated files for the Product project.
 ```
 
+
+### MVP Quick Start
+Run `npm install` then `npm start` to launch the Electron app.
+

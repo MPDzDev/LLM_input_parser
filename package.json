@@ -1,0 +1,12 @@
+{
+  "name": "code-diff-assistant",
+  "version": "0.1.0",
+  "description": "Electron MVP for code diff parser",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^26.2.2"
+  }
+}
