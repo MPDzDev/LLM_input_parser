@@ -36,6 +36,6 @@ ipcMain.handle('select-folder', async () => {
 
 ipcMain.handle('generate-summary', async (_event, opts) => {
   const { productDir, customizerDir, extensions, output } = opts;
-  await generateSummary(productDir, customizerDir, extensions, output);
-  return true;
+  const summary = await generateSummary(productDir, customizerDir, extensions, output);
+  return summary;
 });

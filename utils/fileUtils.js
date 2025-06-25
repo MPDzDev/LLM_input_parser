@@ -27,6 +27,7 @@ async function generateSummary(productDir, customizerDir, extensions, output) {
   }
   await fs.mkdir(path.dirname(output), { recursive: true });
   await fs.writeFile(output, summary);
+  return summary;
 }
 
 module.exports = { generateSummary };

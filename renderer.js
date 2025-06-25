@@ -4,6 +4,7 @@ const generateBtn = document.getElementById('generate');
 const productPathSpan = document.getElementById('product-path');
 const customizerPathSpan = document.getElementById('customizer-path');
 const statusDiv = document.getElementById('status');
+const summaryPre = document.getElementById('summary');
 
 let productDir = null;
 let customizerDir = null;
@@ -32,6 +33,7 @@ generateBtn.addEventListener('click', async () => {
   const extensions = document.getElementById('extensions').value.split(',').map(e => e.trim()).filter(Boolean);
   const output = 'output/summary.md';
   statusDiv.textContent = 'Generating...';
-  await window.api.generateSummary({ productDir, customizerDir, extensions, output });
+  const summary = await window.api.generateSummary({ productDir, customizerDir, extensions, output });
   statusDiv.textContent = 'Saved to ' + output;
+  summaryPre.textContent = summary;
 });
