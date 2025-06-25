@@ -11,6 +11,7 @@ This project is a cross-platform desktop application built with Electron, design
 - Select two root folders: one for the base Product codebase, one for the Customizer.
 - Filter and select files by extension (e.g., C#, JavaScript, SQL).
 - Export selected files into a single summary document.
+- View the generated summary directly in the app before saving.
 - Generate a unified input file in Markdown or plain text format.
 - Designed to create LLM-ready prompts for code understanding or code generation tasks.
 
@@ -127,8 +128,8 @@ npm start
 ```
 
 2. Choose Product and Customizer folders.
-3. Click "Generate LLM Input".
-4. Review and export the result.
+3. Click "Generate LLM Input" to produce a preview.
+4. Review the summary in the app and export the result.
 
 ---
 
