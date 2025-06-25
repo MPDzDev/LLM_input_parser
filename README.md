@@ -10,6 +10,7 @@ This project is a cross-platform desktop application built with Electron, design
 
 - Select two root folders: one for the base Product codebase, one for the Customizer.
 - Filter and select files by extension (e.g., C#, JavaScript, SQL).
+- Display a tree view of files in the Customizer folder so you can choose which files to include.
 - Export selected files into a single summary document.
 - View the generated summary directly in the app before saving.
 - Generate a unified input file in Markdown or plain text format.
